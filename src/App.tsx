@@ -1,5 +1,7 @@
+import Navbar from "./components/navbar";
+
 function App() {
-  return <div className="bg-red-400">Prueba</div>;
+  return <Navbar />;
 }
 
 export default App;
