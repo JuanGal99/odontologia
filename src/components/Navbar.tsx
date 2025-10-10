@@ -1,7 +1,24 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../i18n";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t } = useTranslation("navbar");
+
+  const menuItems = [
+    { key: "home", label: t("home") },
+    { key: "about", label: t("about") },
+    { key: "services", label: t("services") },
+    { key: "tourism", label: t("tourism") },
+    { key: "testimonials", label: t("testimonials") },
+    { key: "blog", label: t("blog") },
+    { key: "contact", label: t("contact") },
+  ];
+
+  const changeLanguage = (lng: "en" | "es") => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <nav
@@ -9,52 +26,102 @@ const Navbar = () => {
       role="navigation"
       aria-label="Main navigation"
     >
+      {/* Skip link para accesibilidad */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only absolute top-0 left-0 bg-white text-sky-500 px-4 py-2 z-50"
+      >
+        Skip to main content
+      </a>
+
+      {/* Navbar principal */}
       <div className="flex items-center justify-between p-4">
-        {/* Logo */}
-        <a href="#" className="text-lg font-bold">
+        {/* Logo (izquierda) */}
+        <div className="text-lg font-bold" aria-label="Home">
           Logo
-        </a>
+        </div>
 
-        {/* Desktop nav: solo visible en lg */}
-        <ul className="hidden lg:flex gap-6">
-          <li>
-            <a href="#" aria-current="page">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#">About us</a>
-          </li>
-          <li>
-            <a href="#">Services</a>
-          </li>
-          <li>
-            <a href="#">Dental tourism</a>
-          </li>
-          <li>
-            <a href="#">Testimonials</a>
-          </li>
-          <li>
-            <a href="#">Blog</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
+        {/* Contenedor central para enlaces (solo desktop) */}
+        <div className="hidden lg:flex flex-1 justify-center">
+          <ul className="flex gap-6">
+            {menuItems.map((item) => (
+              <li key={item.key}>
+                <a
+                  href="#"
+                  aria-current={item.key === "home" ? "page" : undefined}
+                  className=" relative pb-1 border-b-2 border-transparent hover:border-white focus:outline-none focus:border-white transition-all duration-300 ease-in-out"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        {/* CTA Button: solo en pantallas grandes */}
-        <button
-          className="hidden lg:block bg-white text-sky-500 px-4 py-2 rounded hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-sky-500"
-          type="button"
-        >
-          Agendar cita
-        </button>
+        {/* Contenedor derecho para idioma y CTA (solo desktop) */}
+        <div className="hidden lg:flex items-center gap-4">
+          {/* Selector de idioma */}
+          <div className="flex gap-2">
+            <button
+              onClick={() => changeLanguage("en")}
+              aria-label="Change language to English"
+            >
+              <img
+                src="/flags/us.svg"
+                alt="English"
+                className="w-6 h-6 hover:opacity-80 transition-opacity cursor-pointer"
+              />
+            </button>
+            <button
+              onClick={() => changeLanguage("es")}
+              aria-label="Cambiar idioma a Español"
+            >
+              <img
+                src="/flags/co.svg"
+                alt="Español"
+                className="w-6 h-6 hover:opacity-80 transition-opacity cursor-pointer"
+              />
+            </button>
+          </div>
 
-        {/* Mobile hamburger menu */}
+          {/* Botón CTA */}
+          <button
+            className="bg-white text-sky-500 px-4 py-2 rounded hover:bg-slate-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-300"
+            type="button"
+          >
+            {t("cta")}
+          </button>
+        </div>
+
+        {/* Selector de idioma - móvil */}
+        <div className="flex gap-4 lg:hidden">
+          <button
+            onClick={() => changeLanguage("en")}
+            aria-label="Change language to English"
+          >
+            <img
+              src="/flags/us.svg"
+              alt="English"
+              className="w-6 h-6 hover:opacity-80"
+            />
+          </button>
+          <button
+            onClick={() => changeLanguage("es")}
+            aria-label="Cambiar idioma a Español"
+          >
+            <img
+              src="/flags/co.svg"
+              alt="Español"
+              className="w-6 h-6 hover:opacity-80"
+            />
+          </button>
+        </div>
+
+        {/* Botón menú hamburguesa - móvil */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="lg:hidden p-2 focus:outline-none  rounded"
-          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+          className="lg:hidden p-2 focus:outline-none rounded"
+          aria-label={menuOpen ? t("closeMenu") : t("openMenu")}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           type="button"
@@ -65,8 +132,8 @@ const Navbar = () => {
             stroke="currentColor"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
+            role="img"
             aria-hidden="true"
-            focusable="false"
           >
             {menuOpen ? (
               <path
@@ -87,7 +154,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile dropdown menu */}
+      {/* Menú desplegable - móvil */}
       {menuOpen && (
         <div
           id="mobile-menu"
@@ -95,33 +162,29 @@ const Navbar = () => {
           role="menu"
           aria-label="Mobile menu"
         >
+          {/* Navegación móvil */}
           <ul className="grid grid-cols-2 gap-3">
-            {[
-              "Home",
-              "About us",
-              "Services",
-              "Dental tourism",
-              "Testimonials",
-              "Blog",
-              "Contact",
-            ].map((item, index) => (
-              <li key={item}>
+            {menuItems.map((item) => (
+              <li key={item.key}>
                 <a
                   href="#"
                   role="menuitem"
                   tabIndex={0}
-                  className="block focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-sky-500 rounded"
+                  aria-current={item.key === "home" ? "page" : undefined}
+                  className="block rounded"
                 >
-                  {item}
+                  {item.label}
                 </a>
               </li>
             ))}
           </ul>
+
+          {/* Botón CTA móvil */}
           <button
-            className="w-full mt-2 bg-white text-sky-500 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-sky-500"
+            className="w-full mt-4 bg-white text-sky-500 px-4 py-2 rounded"
             type="button"
           >
-            Agendar cita
+            {t("cta")}
           </button>
         </div>
       )}
