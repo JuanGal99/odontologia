@@ -7,12 +7,10 @@ const Navbar = () => {
   const { t } = useTranslation("navbar");
 
   const menuItems = [
-    { key: "home", label: t("home") },
     { key: "about", label: t("about") },
     { key: "services", label: t("services") },
     { key: "tourism", label: t("tourism") },
     { key: "testimonials", label: t("testimonials") },
-    { key: "blog", label: t("blog") },
     { key: "contact", label: t("contact") },
   ];
 
@@ -38,7 +36,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between p-4">
         {/* Logo (izquierda) */}
         <div className="text-lg font-bold" aria-label="Home">
-          Logo
+          <a href="#hero">Logo</a>
         </div>
 
         {/* Contenedor central para enlaces (solo desktop) */}
@@ -47,7 +45,7 @@ const Navbar = () => {
             {menuItems.map((item) => (
               <li key={item.key}>
                 <a
-                  href="#"
+                  href={`#${item.key}`}
                   aria-current={item.key === "home" ? "page" : undefined}
                   className=" relative pb-1 border-b-2 border-transparent hover:border-white focus:outline-none focus:border-white transition-all duration-300 ease-in-out"
                 >
