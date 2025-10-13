@@ -36,13 +36,13 @@ const Hero = () => {
               {t("services")}
             </a>
 
-            <button
+            <a
+              href="#contact"
               className="bg-white text-sky-500 border border-sky-500 px-6 py-3 rounded-md font-semibold hover:bg-sky-50 focus:outline-none focus:ring-2 focus:ring-sky-300 transition"
-              type="button"
               aria-label="Soy paciente internacional"
             >
               {t("pacientI")}
-            </button>
+            </a>
           </div>
         </div>
 
@@ -60,6 +60,8 @@ const Hero = () => {
                 src="/images/beach-mobile.webp"
                 alt="Playa tropical en Colombia"
                 loading="lazy"
+                width={360}
+                height={270}
                 className="w-full h-full object-cover"
               />
             </picture>
@@ -77,6 +79,8 @@ const Hero = () => {
                 src="/images/cartagena-mobile.webp"
                 alt="Calles coloridas de Cartagena"
                 loading="lazy"
+                width={360}
+                height={270}
                 className="w-full h-full object-cover"
               />
             </picture>

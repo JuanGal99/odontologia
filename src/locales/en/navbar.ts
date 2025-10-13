@@ -3,7 +3,6 @@ const navbar = {
   about: "About us",
   services: "Services",
   tourism: "Dental tourism",
-  testimonials: "Testimonials",
   blog: "Blog",
   contact: "Contact",
   cta: "Book appointment",

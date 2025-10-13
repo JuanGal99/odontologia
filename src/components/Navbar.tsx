@@ -10,7 +10,6 @@ const Navbar = () => {
     { key: "about", label: t("about") },
     { key: "services", label: t("services") },
     { key: "tourism", label: t("tourism") },
-    { key: "testimonials", label: t("testimonials") },
     { key: "contact", label: t("contact") },
   ];
 
@@ -35,9 +34,14 @@ const Navbar = () => {
       {/* Navbar principal */}
       <div className="flex items-center justify-between p-4">
         {/* Logo (izquierda) */}
-        <div className="text-lg font-bold" aria-label="Home">
-          <a href="#hero">Logo</a>
-        </div>
+        <a href="#hero" className="flex items-center gap-2">
+          <img
+            src="/tooth.svg"
+            alt="Dental Tourism Colombia"
+            className="h-8 w-8"
+          />
+          <span className="font-bold text-black text-lg">DentalTour</span>
+        </a>
 
         {/* Contenedor central para enlaces (solo desktop) */}
         <div className="hidden lg:flex flex-1 justify-center">
@@ -84,7 +88,7 @@ const Navbar = () => {
 
           {/* Botón CTA */}
           <button
-            className="bg-white text-sky-500 px-4 py-2 rounded hover:bg-slate-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-300"
+            className="bg-white text-sky-500 px-4 py-2 font-semibold rounded hover:bg-slate-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-300"
             type="button"
           >
             {t("cta")}
