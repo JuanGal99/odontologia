@@ -120,7 +120,7 @@ const Navbar = () => {
           onClick={() => setMenuOpen(!menuOpen)}
           className="lg:hidden p-2 focus:outline-none rounded"
           aria-label={menuOpen ? t("closeMenu") : t("openMenu")}
-          aria-expanded={menuOpen}
+          aria-expanded={menuOpen ? "true" : "false"}
           aria-controls="mobile-menu"
           type="button"
         >
@@ -165,7 +165,7 @@ const Navbar = () => {
             {menuItems.map((item) => (
               <li key={item.key}>
                 <a
-                  href="#"
+                  href={`#${item.key}`}
                   role="menuitem"
                   tabIndex={0}
                   aria-current={item.key === "home" ? "page" : undefined}

@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <main id="main-content" className="pt-20 p-4">
+      <main id="main-content" className="pt-16">
         <Hero />
       </main>
     </>
