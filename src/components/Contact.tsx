@@ -219,20 +219,45 @@ const Contact = () => {
             <h3 className="font-semibold">{t("contactInfo.socialTitle")}</h3>
             <div className="flex flex-col gap-4 mt-2">
               <a
-                href="https://facebook.com/tu-pagina"
+                href="https://facebook.com/Paangape"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sky-600 hover:text-sky-800"
+                className="flex items-center text-blue-600 hover:text-blue-800"
               >
-                Facebook
+                {/* Ícono Facebook SVG */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  className="w-5 h-5 mr-2"
+                  aria-hidden="true"
+                >
+                  <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.333v21.334C0 23.403.597 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.464.099 2.797.142v3.24h-1.918c-1.505 0-1.796.715-1.796 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.728 0 1.325-.597 1.325-1.333V1.333C24 .597 23.403 0 22.675 0z" />
+                </svg>
+                Paula Andrea Galvis
               </a>
+
               <a
-                href="https://instagram.com/tu-pagina"
+                href="https://instagram.com/paulagalvis"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sky-600 hover:text-sky-800"
+                className="flex items-center text-pink-600 hover:text-pink-800"
               >
-                Instagram
+                {/* Ícono Instagram SVG */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  className="w-5 h-5 mr-2"
+                  aria-hidden="true"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37a4 4 0 1 1-4.94-4.94 4 4 0 0 1 4.94 4.94z" />
+                  <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
+                </svg>
+                <span className="text-blue-600">@paulagalvis</span>
               </a>
             </div>
           </div>

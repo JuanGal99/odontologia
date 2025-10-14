@@ -66,12 +66,13 @@ const Services = () => {
                 </div>
 
                 <div className="mt-6">
-                  <button
+                  <a
+                    href="#contact"
                     type="button"
-                    className="w-full bg-sky-500 text-white font-semibold py-2 px-4 rounded hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                    className="block w-full text-center bg-sky-500 text-white font-semibold py-2 px-4 rounded hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-400"
                   >
                     {t("cta")}
-                  </button>
+                  </a>
                 </div>
               </article>
             );

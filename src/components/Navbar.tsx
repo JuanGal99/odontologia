@@ -87,12 +87,12 @@ const Navbar = () => {
           </div>
 
           {/* Botón CTA */}
-          <button
-            className="bg-white text-sky-500 px-4 py-2 font-semibold rounded hover:bg-slate-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-300"
-            type="button"
+          <a
+            href="#contact"
+            className="bg-white text-sky-500 px-4 py-2 font-semibold rounded hover:bg-slate-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-300 inline-block"
           >
             {t("cta")}
-          </button>
+          </a>
         </div>
 
         {/* Selector de idioma - móvil */}
@@ -182,12 +182,12 @@ const Navbar = () => {
           </ul>
 
           {/* Botón CTA móvil */}
-          <button
-            className="w-full mt-4 bg-white text-sky-500 px-4 py-2 rounded"
-            type="button"
+          <a
+            href="#contact"
+            className="block w-full mt-4 bg-white text-sky-500 px-4 py-2 rounded text-center"
           >
             {t("cta")}
-          </button>
+          </a>
         </div>
       )}
     </nav>

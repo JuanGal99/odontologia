@@ -20,7 +20,7 @@ const contact = {
     phoneTitle: "Teléfono",
     phone: "+57 3178870588",
     emailTitle: "Correo electrónico",
-    email: "juanpablogalvisperez10@gmail.com",
+    email: "pagalvisp@gmail.com",
     socialTitle: "Redes sociales",
   },
 };
