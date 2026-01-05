@@ -2,18 +2,17 @@ import { useTranslation } from "react-i18next";
 
 type Service = {
   key: string;
-  icon: string;
 };
 
 const services: Service[] = [
-  { key: "estetica", icon: "/icons/esthetic.svg" },
-  { key: "implantes", icon: "/icons/implant.svg" },
-  { key: "ortodoncia", icon: "/icons/braces.svg" },
-  { key: "rehabilitacion", icon: "/icons/tooth.svg" },
-  { key: "general", icon: "/icons/general.svg" },
-  { key: "pediatria", icon: "/icons/kid.svg" },
-  { key: "cirugia", icon: "/icons/surgery.svg" },
-  { key: "turismo", icon: "/icons/tourism.svg" },
+  { key: "estetica" },
+  { key: "implantes" },
+  { key: "ortodoncia" },
+  { key: "rehabilitacion" },
+  { key: "general" },
+  { key: "pediatria" },
+  { key: "cirugia" },
+  { key: "turismo" },
 ];
 
 const Services = () => {
@@ -38,7 +37,6 @@ const Services = () => {
           {services.map((service) => {
             const title = t(`${service.key}.title`);
             const description = t(`${service.key}.description`);
-            // Casteo explícito a string[] para evitar error con .map
             const benefits = t(`${service.key}.benefits`, {
               returnObjects: true,
             }) as string[];
@@ -49,12 +47,6 @@ const Services = () => {
                 className="bg-sky-50 rounded-xl shadow-md p-6 flex flex-col justify-between hover:shadow-lg transition"
               >
                 <div>
-                  <img
-                    src={service.icon}
-                    alt=""
-                    className="w-12 h-12 mb-4"
-                    aria-hidden="true"
-                  />
                   <h3 className="text-xl font-semibold mb-2">{title}</h3>
                   <p className="text-sky-800 text-sm mb-4">{description}</p>
 
@@ -68,7 +60,6 @@ const Services = () => {
                 <div className="mt-6">
                   <a
                     href="#contact"
-                    type="button"
                     className="block w-full text-center bg-sky-500 text-white font-semibold py-2 px-4 rounded hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-400"
                   >
                     {t("cta")}

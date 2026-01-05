@@ -5,6 +5,7 @@ import i18n from "../i18n";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { t } = useTranslation("navbar");
+  const currentLang = i18n.language as "en" | "es";
 
   const menuItems = [
     { key: "about", label: t("about") },
@@ -67,21 +68,25 @@ const Navbar = () => {
             <button
               onClick={() => changeLanguage("en")}
               aria-label="Change language to English"
+              aria-pressed={currentLang === "en"}
             >
               <img
                 src="/flags/us.svg"
                 alt="English"
-                className="w-6 h-6 hover:opacity-80 transition-opacity cursor-pointer"
+                className={`w-6 h-6 hover:opacity-80 ${currentLang === "en" ? "ring-2 ring-white rounded-full" : ""
+                  }`}
               />
             </button>
             <button
               onClick={() => changeLanguage("es")}
               aria-label="Cambiar idioma a Español"
+              aria-pressed={currentLang === "es"}
             >
               <img
                 src="/flags/co.svg"
                 alt="Español"
-                className="w-6 h-6 hover:opacity-80 transition-opacity cursor-pointer"
+                className={`w-6 h-6 hover:opacity-80 ${currentLang === "es" ? "ring-2 ring-white rounded-full" : ""
+                  }`}
               />
             </button>
           </div>
