@@ -6,12 +6,10 @@ type Service = {
 
 const services: Service[] = [
   { key: "estetica" },
-  { key: "implantes" },
+  { key: "armonizacion" },
   { key: "ortodoncia" },
   { key: "rehabilitacion" },
   { key: "general" },
-  { key: "pediatria" },
-  { key: "cirugia" },
   { key: "turismo" },
 ];
 
@@ -21,17 +19,20 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="bg-white text-sky-900 px-6 py-16 scroll-mt-20"
+      className="bg-slate-50 text-sky-900 px-6 py-24 scroll-mt-20"
       aria-labelledby="services-heading"
       role="region"
     >
-      <div className="max-w-6xl mx-auto">
-        <h2
-          id="services-heading"
-          className="text-3xl md:text-4xl font-extrabold mb-12 text-center"
-        >
-          {t("title")}
-        </h2>
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2
+            id="services-heading"
+            className="text-4xl md:text-5xl font-extrabold text-sky-950 inline-block relative"
+          >
+            {t("title")}
+            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-sky-500 rounded"></div>
+          </h2>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => {
@@ -44,27 +45,42 @@ const Services = () => {
             return (
               <article
                 key={service.key}
-                className="bg-sky-50 rounded-xl shadow-md p-6 flex flex-col justify-between hover:shadow-lg transition"
+                className="relative bg-white rounded-2xl p-8 flex flex-col justify-start shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.15)] hover:-translate-y-1 transition-all duration-300 border border-slate-100 group overflow-hidden"
               >
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">{title}</h3>
-                  <p className="text-sky-800 text-sm mb-4">{description}</p>
+                {/* Acento superior decorativo */}
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sky-400 to-sky-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
 
-                  <ul className="list-disc pl-5 text-sm text-sky-700 space-y-1">
-                    {benefits.map((benefit, index) => (
-                      <li key={index}>{benefit}</li>
-                    ))}
-                  </ul>
-                </div>
+                <h3 className="text-2xl font-extrabold mb-3 text-slate-800 group-hover:text-sky-600 transition-colors duration-300">
+                  {title}
+                </h3>
 
-                <div className="mt-6">
-                  <a
-                    href="#contact"
-                    className="block w-full text-center bg-sky-500 text-white font-semibold py-2 px-4 rounded hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-400"
-                  >
-                    {t("cta")}
-                  </a>
-                </div>
+                <p className="text-slate-500 text-sm mb-6 leading-relaxed font-medium">
+                  {description}
+                </p>
+
+                <div className="h-px w-full bg-slate-100 mb-6 group-hover:bg-sky-100 transition-colors duration-300"></div>
+
+                <ul className="space-y-3">
+                  {benefits.map((benefit, index) => (
+                    <li key={index} className="flex items-center text-sm text-slate-600 font-medium">
+                      <svg
+                        className="w-5 h-5 text-sky-500 mr-3 flex-shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M5 13l4 4L19 7"
+                        ></path>
+                      </svg>
+                      {benefit}
+                    </li>
+                  ))}
+                </ul>
               </article>
             );
           })}

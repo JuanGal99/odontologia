@@ -5,16 +5,16 @@ const services = {
   estetica: {
     title: "Cosmetic Dentistry",
     description: "Enhance your smile with modern aesthetic treatments.",
-    benefits: ["Teeth whitening", "Porcelain veneers", "Smile design"],
+    benefits: ["Porcelain veneers", "Smile design", "Teeth whitening"],
   },
 
-  implantes: {
-    title: "Dental Implants",
-    description: "Restore your smile with permanent solutions.",
+  armonizacion: {
+    title: "Non-surgical facial treatments",
+    description: "Balance and proportion of the face.",
     benefits: [
-      "Replaces missing teeth",
-      "Improves chewing function",
-      "Durable and natural-looking",
+      "Botulinum toxin",
+      "Hyaluronic acid",
+      "Biostimulators"
     ],
   },
 
@@ -22,9 +22,9 @@ const services = {
     title: "Orthodontics",
     description: "Correct misaligned teeth and improve your bite.",
     benefits: [
-      "Braces and clear aligners",
-      "Better jaw alignment",
-      "Improved facial harmony",
+      "Clear aligners",
+      "Braces",
+      "Enhanced bite function",
     ],
   },
 
@@ -48,31 +48,11 @@ const services = {
     ],
   },
 
-  pediatria: {
-    title: "Pediatric Dentistry",
-    description: "Gentle dental care tailored for children.",
-    benefits: [
-      "Kid-friendly environment",
-      "Preventive treatments",
-      "Specialized pediatric care",
-    ],
-  },
-
-  cirugia: {
-    title: "Oral Surgery",
-    description: "Advanced surgical procedures in a safe environment.",
-    benefits: [
-      "Wisdom teeth extraction",
-      "Bone grafts",
-      "Minor oral surgeries",
-    ],
-  },
-
   turismo: {
     title: "Dental Tourism",
     description: "Affordable dental care in Colombia's top destinations.",
     benefits: [
-      "Save up to 70%",
+      "Save up to 60%",
       "Combine treatment with vacation",
       "Assistance with travel & stay",
     ],

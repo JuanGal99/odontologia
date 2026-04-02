@@ -17,7 +17,7 @@ const tourismDental = {
     "Consulta inicial y diagnóstico remoto",
     "Planificación personalizada del viaje y tratamiento",
     "Recepción y acompañamiento en Colombia",
-    "Tratamiento dental en clínica especializada",
+    "Tratamiento dental en clínica",
     "Recomendaciones y actividades turísticas",
     "Seguimiento post-tratamiento a distancia",
   ],

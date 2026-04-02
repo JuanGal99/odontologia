@@ -1,8 +1,8 @@
 const hero = {
-  title: "Transformamos tu sonrisa. Cuidamos tu bienestar.",
-  subtitle: "Atención de calidad para pacientes locales e internacionales",
-  services: "Descubre nuestros servicios",
-  pacientI: "Soy paciente internacional",
+  "title": "Hoy es tu sonrisa",
+  "subtitle": "Estética dental y armonía facial",
+  "services": "Ver servicios",
+  "pacientI": "Solicitar cotización"
 };
 
 export default hero;

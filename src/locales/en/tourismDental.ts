@@ -17,7 +17,7 @@ const tourismDental = {
     "Initial consultation and remote diagnosis",
     "Personalized travel and treatment planning",
     "Reception and accompaniment in Colombia",
-    "Dental treatment at a specialized clinic",
+    "Dental treatment at a clinic",
     "Touristic recommendations and activities",
     "Post-treatment follow-up remotely",
   ],

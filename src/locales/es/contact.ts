@@ -13,10 +13,15 @@ const contact = {
     submit: "Enviar mensaje",
     sending: "Enviando...",
     successMessage: "¡Gracias! Tu mensaje ha sido enviado.",
+    placeholders: {
+      name: "Tu nombre completo",
+      email: "tucorreo@ejemplo.com",
+      message: "¿En qué podemos ayudarte?"
+    }
   },
   contactInfo: {
     title: "Datos de contacto",
-    address: "Calle Falsa 123, Bogotá, Colombia",
+    address: "Bucaramanga, Colombia",
     phoneTitle: "Teléfono",
     phone: "+57 3178870588",
     emailTitle: "Correo electrónico",

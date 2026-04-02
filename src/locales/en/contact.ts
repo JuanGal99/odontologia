@@ -13,6 +13,11 @@ const contact = {
     submit: "Send message",
     sending: "Sending...",
     successMessage: "Thank you! Your message has been sent.",
+    placeholders: {
+      name: "Your full name",
+      email: "Your email",
+      message: "How can we help you?"
+    }
   },
   contactInfo: {
     title: "Contact Information",
