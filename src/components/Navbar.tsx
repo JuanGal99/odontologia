@@ -20,39 +20,38 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed top-0 w-full bg-white shadow-md border-b border-gray-300 text-white z-50"
+      className="fixed top-0 w-full bg-black/95 backdrop-blur-md border-b border-white/10 z-50"
       role="navigation"
       aria-label="Main navigation"
     >
-      {/* Skip link para accesibilidad */}
+      {/* Skip link */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only absolute top-0 left-0 bg-white text-sky-500 px-4 py-2 z-50"
+        className="sr-only focus:not-sr-only absolute top-0 left-0 bg-white text-black px-4 py-2 z-50"
       >
         Skip to main content
       </a>
 
-      {/* Navbar principal */}
-      <div className="flex items-center justify-between p-4">
-        {/* Logo (izquierda) */}
-        <a href="#hero" className="flex items-center gap-2">
+      {/* Navbar */}
+      <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2">
+
+        {/* LOGO */}
+        <a href="#hero" className="flex items-center shrink-0">
           <img
-            src="/tooth.svg"
+            src="/logo.png"
             alt="Dental Tourism Colombia"
-            className="h-8 w-8"
+            className="h-10 sm:h-11 lg:h-12 w-auto object-contain select-none"
           />
-          <span className="font-bold text-black text-lg">DentalTour</span>
         </a>
 
-        {/* Contenedor central para enlaces (solo desktop) */}
+        {/* LINKS DESKTOP */}
         <div className="hidden lg:flex flex-1 justify-center">
-          <ul className="flex gap-6">
+          <ul className="flex items-center gap-8">
             {menuItems.map((item) => (
               <li key={item.key}>
                 <a
                   href={`#${item.key}`}
-                  aria-current={item.key === "home" ? "page" : undefined}
-                  className=" text-black relative pb-1 border-b-2 border-transparent hover:border-white focus:outline-none focus:border-white transition-all duration-300 ease-in-out"
+                  className="text-white/90 relative pb-1 border-b-2 border-transparent hover:text-white hover:border-[#d4af37] transition-all duration-300"
                 >
                   {item.label}
                 </a>
@@ -61,124 +60,75 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Contenedor derecho para idioma y CTA (solo desktop) */}
-        <div className="hidden lg:flex items-center gap-4">
-          {/* Selector de idioma */}
-          <div className="flex gap-2">
-            <button
-              onClick={() => changeLanguage("en")}
-              aria-label="Change language to English"
-              aria-pressed={currentLang === "en"}
-            >
+        {/* DERECHA DESKTOP */}
+        <div className="hidden lg:flex items-center gap-5">
+          {/* Idiomas */}
+          <div className="flex items-center gap-2">
+            <button onClick={() => changeLanguage("en")} type="button">
               <img
                 src="/flags/us.svg"
-                alt="English"
-                className={`w-6 h-6 hover:opacity-80 ${currentLang === "en" ? "ring-2 ring-white rounded-full" : ""
+                className={`w-6 h-6 ${currentLang === "en"
+                    ? "ring-2 ring-[#d4af37] rounded-full"
+                    : ""
                   }`}
               />
             </button>
-            <button
-              onClick={() => changeLanguage("es")}
-              aria-label="Cambiar idioma a Español"
-              aria-pressed={currentLang === "es"}
-            >
+
+            <button onClick={() => changeLanguage("es")} type="button">
               <img
                 src="/flags/co.svg"
-                alt="Español"
-                className={`w-6 h-6 hover:opacity-80 ${currentLang === "es" ? "ring-2 ring-white rounded-full" : ""
+                className={`w-6 h-6 ${currentLang === "es"
+                    ? "ring-2 ring-[#d4af37] rounded-full"
+                    : ""
                   }`}
               />
             </button>
           </div>
 
-          {/* Botón CTA */}
+          {/* CTA */}
           <a
             href="#contact"
-            className="bg-gray-700 text-white px-4 py-2 font-semibold rounded hover:bg-slate-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-300 inline-block"
+            className="bg-[#1f2f46] text-white px-5 py-2 font-semibold rounded-md hover:bg-[#2b3f5d] transition-all duration-300"
           >
             {t("cta")}
           </a>
         </div>
 
-        {/* Selector de idioma - móvil */}
-        <div className="flex gap-4 lg:hidden">
-          <button
-            onClick={() => changeLanguage("en")}
-            aria-label="Change language to English"
-          >
-            <img
-              src="/flags/us.svg"
-              alt="English"
-              className="w-6 h-6 hover:opacity-80"
-            />
+        {/* MOBILE */}
+        <div className="flex items-center gap-3 lg:hidden">
+          <button onClick={() => changeLanguage("en")} type="button">
+            <img src="/flags/us.svg" className="w-6 h-6" />
           </button>
+
+          <button onClick={() => changeLanguage("es")} type="button">
+            <img src="/flags/co.svg" className="w-6 h-6" />
+          </button>
+
           <button
-            onClick={() => changeLanguage("es")}
-            aria-label="Cambiar idioma a Español"
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="p-2 text-white"
+            type="button"
           >
-            <img
-              src="/flags/co.svg"
-              alt="Español"
-              className="w-6 h-6 hover:opacity-80"
-            />
+            <svg className="w-6 h-6" fill="none" stroke="currentColor">
+              {menuOpen ? (
+                <path d="M6 18L18 6M6 6l12 12" strokeWidth={2} />
+              ) : (
+                <path d="M4 6h16M4 12h16M4 18h16" strokeWidth={2} />
+              )}
+            </svg>
           </button>
         </div>
-
-        {/* Botón menú hamburguesa - móvil */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="lg:hidden p-2 focus:outline-none rounded"
-          aria-label={menuOpen ? t("closeMenu") : t("openMenu")}
-          aria-expanded={menuOpen ? "true" : "false"}
-          aria-controls="mobile-menu"
-          type="button"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-hidden="true"
-          >
-            {menuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
       </div>
 
-      {/* Menú desplegable - móvil */}
+      {/* MOBILE MENU */}
       {menuOpen && (
-        <div
-          id="mobile-menu"
-          className="lg:hidden px-4 pb-4"
-          role="menu"
-          aria-label="Mobile menu"
-        >
-          {/* Navegación móvil */}
+        <div className="lg:hidden px-4 pb-4 pt-2 bg-black border-t border-white/10">
           <ul className="grid grid-cols-2 gap-3">
             {menuItems.map((item) => (
               <li key={item.key}>
                 <a
                   href={`#${item.key}`}
-                  role="menuitem"
-                  tabIndex={0}
-                  aria-current={item.key === "home" ? "page" : undefined}
-                  className="block rounded"
+                  className="block px-3 py-2 text-white/90 hover:bg-white/5"
                 >
                   {item.label}
                 </a>
@@ -186,10 +136,9 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* Botón CTA móvil */}
           <a
             href="#contact"
-            className="block w-full mt-4 bg-white text-sky-500 px-4 py-2 rounded text-center"
+            className="block w-full mt-4 bg-[#1f2f46] text-white px-4 py-3 rounded-md text-center font-semibold"
           >
             {t("cta")}
           </a>

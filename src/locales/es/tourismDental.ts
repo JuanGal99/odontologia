@@ -17,14 +17,14 @@ const tourismDental = {
     "Consulta inicial y diagnóstico remoto",
     "Planificación personalizada del viaje y tratamiento",
     "Recepción y acompañamiento en Colombia",
-    "Tratamiento dental en clínica",
+    "Tratamiento dental",
     "Recomendaciones y actividades turísticas",
     "Seguimiento post-tratamiento a distancia",
   ],
 
   partnersTitle: "Alianzas con agencias de viaje",
 
-  testimonialsTitle: "Casos de éxito de pacientes internacionales",
+  testimonialsTitle: "Casos de éxito de pacientes",
 };
 
 export default tourismDental;

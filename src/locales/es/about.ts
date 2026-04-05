@@ -1,10 +1,10 @@
 const about = {
   title: "Sobre Nuestra Clínica",
   description:
-    "Nacimos con la visión de ofrecer una mejor atención odontológica, enfocada en la calidad, la confianza y tu bienestar. Nos dedicamos a brindarte una experiencia cómoda y segura, donde te sientas bien atendido desde el primer momento.",
-  point1: "Profesionales comprometidos",
+    "Nacimos con la visión de ofrecer una atención odontológica de excelencia, enfocada en la calidad, la confianza y el bienestar del paciente. Nos dedicamos a brindar una experiencia cómoda y segura, respaldada por un servicio profesional desde el primer contacto. ",
+  point1: "Profesionales altamente comprometidos",
   point2: "Tratamientos estéticos y funcionales",
-  point3: "Ubicados en uno de los destinos turísticos más hermosos de Colombia",
+  point3: "Ubicados en uno de los destinos turísticos más destacados de Colombia",
   imageAlt: "Nuestro equipo dental sonriendo en la clínica",
 };
 

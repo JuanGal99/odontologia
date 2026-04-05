@@ -17,14 +17,14 @@ const tourismDental = {
     "Initial consultation and remote diagnosis",
     "Personalized travel and treatment planning",
     "Reception and accompaniment in Colombia",
-    "Dental treatment at a clinic",
+    "Dental treatment",
     "Touristic recommendations and activities",
     "Post-treatment follow-up remotely",
   ],
 
   partnersTitle: "Travel Agency Partnerships",
 
-  testimonialsTitle: "Success Stories from International Patients",
+  testimonialsTitle: "Success Stories from Patients",
 };
 
 export default tourismDental;
