@@ -1,8 +1,8 @@
 const tourismDental = {
-  title: "Turismo Dental con Dr. Paula Galvis",
-  whyTitle: "¿Qué es y por qué hacerlo con Dr. Paula Galvis?",
+  title: "Turismo Dental con Dra. Paula Galvis",
+  whyTitle: "¿Qué es y por qué hacerlo con Dra. Paula Galvis?",
   whyDescription:
-    "Ofrecemos una experiencia completa que combina atención dental de alta calidad con el turismo en Colombia, facilitando cada paso del proceso para pacientes internacionales.",
+    "Ofrecemos una experiencia completa que combina atención dental de alta calidad con el turismo en Colombia. Podrás conocer lugares como: Bucaramanga la ciudad bonita, el imponente Cañon del Chicamocha, Barichara el pueblo más bonito de Colombia y Cartagena la ciudad amurallada, entre otros.",
 
   servicesIncludedTitle: "Servicios incluidos",
   servicesIncluded: [

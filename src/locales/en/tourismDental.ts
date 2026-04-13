@@ -2,7 +2,7 @@ const tourismDental = {
   title: "Dental Tourism with Dr. Paula Galvis",
   whyTitle: "What is it and Why Choose Dr. Paula Galvis?",
   whyDescription:
-    "We offer a complete experience combining high-quality dental care with tourism in Colombia, facilitating every step of the process for international patients.",
+    "We offer a complete experience that combines high-quality dental care with tourism in Colombia. You can visit incredible places like: Bucaramanga the beautiful city, the imposing Chicamocha Canyon, Barichara the most beautiful town in Colombia, and Cartagena the walled city, among others.",
 
   servicesIncludedTitle: "Included Services",
   servicesIncluded: [

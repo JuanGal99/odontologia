@@ -84,6 +84,64 @@ const TourismDental = () => {
           </article>
         </div>
 
+        {/*Fotos de lugares*/}
+        <div className="mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+            <div className="group relative overflow-hidden rounded-3xl shadow-lg">
+              <img
+                src="/images/turismo-1.jpeg"
+                alt="Cartagena"
+                className="w-full h-72 object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-5">
+                <p className="text-white text-lg font-semibold">Cartagena</p>
+                <p className="text-white/85 text-sm">Ciudad moderna y acogedora</p>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-3xl shadow-lg">
+              <img
+                src="/images/turismo-2.jpeg"
+                alt="San Andrés"
+                className="w-full h-72 object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-5">
+                <p className="text-white text-lg font-semibold">San Andrés</p>
+                <p className="text-white/85 text-sm">Historia, mar y encanto colonial</p>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-3xl shadow-lg">
+              <img
+                src="/images/turismo-3.jpeg"
+                alt="Cañón del Chicamocha"
+                className="w-full h-72 object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-5">
+                <p className="text-white text-lg font-semibold">Cañón del Chicamocha</p>
+                <p className="text-white/85 text-sm">Aventura y paisajes inolvidables</p>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-3xl shadow-lg">
+              <img
+                src="/images/turismo-4.jpeg"
+                alt="Mompox"
+                className="w-full h-72 object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-5">
+                <p className="text-white text-lg font-semibold">Mompox</p>
+                <p className="text-white/85 text-sm">Pueblo colonial con gran belleza</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/*Proceso paso a paso*/}
         <article className="bg-white text-sky-900 p-10 rounded-3xl shadow-2xl mb-20 max-w-4xl mx-auto relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-sky-50 rounded-full -mr-32 -mt-32 opacity-50 pointer-events-none"></div>
           <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center relative z-10">{t("processTitle")}</h3>
@@ -118,7 +176,7 @@ const TourismDental = () => {
               ))}
             </div>
           </article>
-          
+
           <article className="text-center md:text-left hidden">
             {/* Oculto partners a menos que los logos existan o los quieran más prominentes */}
             <h3 className="text-2xl font-bold mb-8 text-sky-200">{t("partnersTitle")}</h3>

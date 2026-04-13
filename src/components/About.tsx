@@ -52,7 +52,7 @@ const About = () => {
           <div className="lg:w-1/2 max-w-lg mx-auto relative">
             <div className="absolute inset-0 bg-sky-200 rounded-2xl transform translate-x-4 translate-y-4 -z-10"></div>
             <img
-              src="/images/team.webp"
+              src="/images/team.jpeg"
               alt={t("imageAlt")}
               className="rounded-2xl shadow-2xl object-cover w-full border-4 border-white"
               loading="lazy"
