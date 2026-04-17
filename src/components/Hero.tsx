@@ -1,5 +1,10 @@
 import { useTranslation } from "react-i18next";
 
+/**
+ * Componente Hero:
+ * Representa la primera sección visible (el banner principal) al cargar la página.
+ * Contiene el título principal, el subtítulo y llamadas a la acción (botones).
+ */
 const Hero = () => {
   const { t } = useTranslation("hero");
 

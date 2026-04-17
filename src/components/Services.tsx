@@ -13,6 +13,11 @@ const services: Service[] = [
   { key: "turismo" },
 ];
 
+/**
+ * Componente Services (Servicios):
+ * Lista y describe los tratamientos o servicios odontológicos ofrecidos.
+ * Renderiza dinámicamente cada servicio iterando sobre un arreglo.
+ */
 const Services = () => {
   const { t } = useTranslation("services");
 

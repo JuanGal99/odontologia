@@ -5,6 +5,11 @@ import Services from "./components/Services";
 import TourismDental from "./components/TourismDental";
 import Contact from "./components/Contact";
 
+/**
+ * Componente principal de la aplicación (App).
+ * Aquí se ensamblan todas las secciones principales de la landing page.
+ * El Navbar permanece fijo en la parte superior, seguido por el contenido principal.
+ */
 function App() {
   return (
     <>

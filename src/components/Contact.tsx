@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
+/**
+ * Componente Contact (Contacto):
+ * Sección con información de contacto directa y un formulario para enviar mensajes.
+ * Integra validación básica y un botón flotante global para WhatsApp.
+ */
 const Contact = () => {
   const { t } = useTranslation("contact");
 

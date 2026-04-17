@@ -1,5 +1,10 @@
 import { useTranslation } from "react-i18next";
 
+/**
+ * Componente About (Acerca de):
+ * Muestra información general sobre la doctora/clínica,
+ * incluyendo una foto descriptiva y los puntos clave de su enfoque o filosofía.
+ */
 const About = () => {
   const { t } = useTranslation("about");
 

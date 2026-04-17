@@ -27,6 +27,11 @@ function isStringArray(value: unknown): value is string[] {
   );
 }
 
+/**
+ * Componente TourismDental (Turismo Dental):
+ * Destaca el enfoque de turismo médico en Colombia.
+ * Muestra información sobre el proceso, lugares turísticos, y testimonios de pacientes.
+ */
 const TourismDental = () => {
   const { t } = useTranslation("tourismDental");
 
