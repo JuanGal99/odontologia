@@ -1,5 +1,6 @@
 const services = {
   title: "Nuestros Servicios",
+  sectionLabel: "Lo que ofrecemos",
   cta: "Solicitar cotización",
 
   estetica: {

@@ -1,5 +1,6 @@
 const services = {
   title: "Our Dental Services",
+  sectionLabel: "What we offer",
   cta: "Request a Quote",
 
   estetica: {

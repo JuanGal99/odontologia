@@ -1,25 +1,5 @@
 import { useTranslation } from "react-i18next";
 
-const agencies = [
-  { name: "Agencia Viajes XYZ", logo: "/logos/xyz.svg" },
-  { name: "Travel Colombia", logo: "/logos/travelcol.svg" },
-];
-
-const testimonials = [
-  {
-    id: 1,
-    patient: "John D.",
-    quote:
-      "Excelente experiencia, tratamiento profesional y vacaciones increíbles en Colombia.",
-  },
-  {
-    id: 2,
-    patient: "Mary S.",
-    quote:
-      "La atención bilingüe y el acompañamiento hicieron que todo fuera fácil y cómodo.",
-  },
-];
-
 // Type guard para arrays de strings
 function isStringArray(value: unknown): value is string[] {
   return (
@@ -30,7 +10,8 @@ function isStringArray(value: unknown): value is string[] {
 /**
  * Componente TourismDental (Turismo Dental):
  * Destaca el enfoque de turismo médico en Colombia.
- * Muestra información sobre el proceso, lugares turísticos, y testimonios de pacientes.
+ * Muestra información sobre el proceso y fotos de destinos turísticos.
+ * Los testimonios de pacientes fueron eliminados.
  */
 const TourismDental = () => {
   const { t } = useTranslation("tourismDental");
@@ -41,46 +22,59 @@ const TourismDental = () => {
   return (
     <section
       id="tourism"
-      className="bg-sky-900 text-white px-6 py-24 scroll-mt-20"
+      className="bg-[#060F1E] text-white px-6 py-24 scroll-mt-20"
       aria-labelledby="tourism-heading"
       role="region"
     >
       <div className="max-w-6xl mx-auto">
+
+        {/* Encabezado */}
         <div className="text-center mb-16">
+          <span className="inline-block mb-4 text-xs font-semibold tracking-[0.2em] uppercase text-[#C9A84C]">
+            — {t("sectionLabel")}
+          </span>
           <h2
             id="tourism-heading"
-            className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight text-white"
+            className="text-4xl md:text-5xl font-extrabold mb-5 tracking-tight text-white"
+            style={{ fontFamily: "'Playfair Display', serif" }}
           >
             {t("title")}
           </h2>
-          <div className="w-24 h-1 bg-sky-400 mx-auto rounded"></div>
+          <div className="w-16 h-[3px] bg-gradient-to-r from-[#C9A84C] to-[#E0BC6A] mx-auto rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          <article className="bg-sky-800/50 p-8 rounded-2xl backdrop-blur-sm border border-sky-700/50">
+        {/* Tarjetas info — Por qué Colombia + Servicios incluidos */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+
+          {/* Por qué Colombia */}
+          <article className="bg-white/5 p-8 rounded-2xl border border-[#C9A84C]/20 hover:border-[#C9A84C]/40 transition-colors duration-300">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-sky-500 rounded-full flex items-center justify-center text-white">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <div className="w-12 h-12 bg-[#C9A84C]/15 rounded-xl border border-[#C9A84C]/25 flex items-center justify-center flex-shrink-0">
+                <svg aria-hidden="true" className="w-6 h-6 text-[#C9A84C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"
+                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
-              <h3 className="text-2xl font-bold">{t("whyTitle")}</h3>
+              <h3 className="text-xl font-bold text-white">{t("whyTitle")}</h3>
             </div>
-            <p className="text-sky-100 text-lg leading-relaxed">{t("whyDescription")}</p>
+            <p className="text-white/65 text-base leading-relaxed font-light">{t("whyDescription")}</p>
           </article>
 
-          <article className="bg-sky-800/50 p-8 rounded-2xl backdrop-blur-sm border border-sky-700/50">
+          {/* Servicios incluidos */}
+          <article className="bg-white/5 p-8 rounded-2xl border border-[#C9A84C]/20 hover:border-[#C9A84C]/40 transition-colors duration-300">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-sky-500 rounded-full flex items-center justify-center text-white">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+              <div className="w-12 h-12 bg-[#C9A84C]/15 rounded-xl border border-[#C9A84C]/25 flex items-center justify-center flex-shrink-0">
+                <svg aria-hidden="true" className="w-6 h-6 text-[#C9A84C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 13l4 4L19 7" />
+                </svg>
               </div>
-              <h3 className="text-2xl font-bold">
-                {t("servicesIncludedTitle")}
-              </h3>
+              <h3 className="text-xl font-bold text-white">{t("servicesIncludedTitle")}</h3>
             </div>
-            <ul className="space-y-3 text-sky-100 text-lg">
+            <ul className="space-y-3 text-white/65 text-base font-light">
               {isStringArray(servicesIncluded)
                 ? servicesIncluded.map((service, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-sky-400 font-bold mt-1">•</span>
+                    <span className="text-[#C9A84C] font-bold mt-0.5 flex-shrink-0">•</span>
                     {service}
                   </li>
                 ))
@@ -89,120 +83,62 @@ const TourismDental = () => {
           </article>
         </div>
 
-        {/*Fotos de lugares*/}
+        {/* Galería de destinos turísticos */}
         <div className="mb-16">
+          <h3 className="text-2xl font-bold text-center mb-8 text-white/90">
+            {t("destinosTitle")}
+          </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
-            <div className="group relative overflow-hidden rounded-3xl shadow-lg">
-              <img
-                src="/images/turismo-1.jpeg"
-                alt="Cartagena"
-                className="w-full h-72 object-cover transition duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-              <div className="absolute bottom-0 left-0 p-5">
-                <p className="text-white text-lg font-semibold">Cartagena</p>
-                <p className="text-white/85 text-sm">Ciudad moderna y acogedora</p>
-              </div>
-            </div>
 
-            <div className="group relative overflow-hidden rounded-3xl shadow-lg">
-              <img
-                src="/images/turismo-2.jpeg"
-                alt="San Andrés"
-                className="w-full h-72 object-cover transition duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-              <div className="absolute bottom-0 left-0 p-5">
-                <p className="text-white text-lg font-semibold">San Andrés</p>
-                <p className="text-white/85 text-sm">Historia, mar y encanto colonial</p>
+            {[
+              { src: "/images/turismo-1.jpeg", city: "Cartagena", desc: "Ciudad moderna y acogedora" },
+              { src: "/images/turismo-2.jpeg", city: "San Andrés", desc: "Historia, mar y encanto colonial" },
+              { src: "/images/turismo-3.jpeg", city: "Cañón del Chicamocha", desc: "Aventura y paisajes inolvidables" },
+              { src: "/images/turismo-4.jpeg", city: "Mompox", desc: "Pueblo colonial con gran belleza" },
+            ].map((place) => (
+              <div key={place.city} className="group relative overflow-hidden rounded-2xl shadow-lg border border-[#C9A84C]/10 hover:border-[#C9A84C]/30 transition-colors duration-300">
+                <img
+                  src={place.src}
+                  alt={place.city}
+                  className="w-full h-72 object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1527]/85 via-[#0B1527]/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-5">
+                  <p className="text-white text-base font-semibold">{place.city}</p>
+                  <p className="text-white/70 text-xs mt-0.5">{place.desc}</p>
+                </div>
               </div>
-            </div>
+            ))}
 
-            <div className="group relative overflow-hidden rounded-3xl shadow-lg">
-              <img
-                src="/images/turismo-3.jpeg"
-                alt="Cañón del Chicamocha"
-                className="w-full h-72 object-cover transition duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-              <div className="absolute bottom-0 left-0 p-5">
-                <p className="text-white text-lg font-semibold">Cañón del Chicamocha</p>
-                <p className="text-white/85 text-sm">Aventura y paisajes inolvidables</p>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-3xl shadow-lg">
-              <img
-                src="/images/turismo-4.jpeg"
-                alt="Mompox"
-                className="w-full h-72 object-cover transition duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-              <div className="absolute bottom-0 left-0 p-5">
-                <p className="text-white text-lg font-semibold">Mompox</p>
-                <p className="text-white/85 text-sm">Pueblo colonial con gran belleza</p>
-              </div>
-            </div>
           </div>
         </div>
 
-        {/*Proceso paso a paso*/}
-        <article className="bg-white text-sky-900 p-10 rounded-3xl shadow-2xl mb-20 max-w-4xl mx-auto relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-sky-50 rounded-full -mr-32 -mt-32 opacity-50 pointer-events-none"></div>
-          <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center relative z-10">{t("processTitle")}</h3>
-          <ol className="relative border-l-2 border-sky-200 ml-4 space-y-8 z-10">
+        {/* Proceso paso a paso */}
+        <article className="bg-white text-[#0B1527] p-10 rounded-3xl shadow-2xl max-w-4xl mx-auto relative overflow-hidden border border-[#C9A84C]/20">
+          {/* Decoración dorada de fondo */}
+          <div className="absolute top-0 right-0 w-56 h-56 bg-[#C9A84C]/5 rounded-full -mr-28 -mt-28 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#C9A84C]/5 rounded-full -ml-20 -mb-20 pointer-events-none" />
+
+          <h3
+            className="text-2xl md:text-3xl font-bold mb-8 text-center relative z-10 text-[#0B1527]"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            {t("processTitle")}
+          </h3>
+
+          <ol className="relative border-l-2 border-[#C9A84C]/30 ml-4 space-y-8 z-10">
             {isStringArray(processSteps)
               ? processSteps.map((step, i) => (
                 <li key={i} className="pl-8 relative">
-                  <span className="absolute w-8 h-8 bg-sky-500 rounded-full flex items-center justify-center text-white font-bold text-sm -left-[17px] ring-4 ring-white shadow-sm">{i + 1}</span>
-                  <p className="text-lg text-slate-700 pt-1">{step}</p>
+                  <span className="absolute w-8 h-8 bg-[#C9A84C] rounded-full flex items-center justify-center text-[#0B1527] font-bold text-sm -left-[17px] ring-4 ring-white shadow-md">
+                    {i + 1}
+                  </span>
+                  <p className="text-base text-slate-700 pt-1 font-light leading-relaxed">{step}</p>
                 </li>
               ))
               : null}
           </ol>
         </article>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-          <article>
-            <h3 className="text-2xl font-bold mb-8 text-center md:text-left text-sky-200">{t("testimonialsTitle")}</h3>
-            <div className="space-y-6">
-              {testimonials.map(({ id, patient, quote }) => (
-                <blockquote
-                  key={id}
-                  className="bg-sky-800 rounded-xl p-6 relative"
-                  aria-label={`Testimonio de ${patient}`}
-                >
-                  <svg className="absolute top-4 left-4 w-8 h-8 text-sky-600/50" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H8.2c.4-2.2 2.4-4 4.8-4V8zm14 0c-3.3 0-6 2.7-6 6v10h10V14h-5.8c.4-2.2 2.4-4 4.8-4V8z"></path></svg>
-                  <p className="text-sky-50 text-lg italic ml-8 relative z-10">"{quote}"</p>
-                  <footer className="mt-4 ml-8 font-bold text-sky-300">
-                    — {patient}
-                  </footer>
-                </blockquote>
-              ))}
-            </div>
-          </article>
-
-          <article className="text-center md:text-left hidden">
-            {/* Oculto partners a menos que los logos existan o los quieran más prominentes */}
-            <h3 className="text-2xl font-bold mb-8 text-sky-200">{t("partnersTitle")}</h3>
-            <div className="flex flex-wrap justify-center md:justify-start gap-8 bg-white p-8 rounded-2xl">
-              {agencies.map((agency) => (
-                <div
-                  key={agency.name}
-                  className="flex flex-col items-center max-w-[120px]"
-                >
-                  <img
-                    src={agency.logo}
-                    alt={agency.name}
-                    className="max-h-16 object-contain mb-3 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
-                    loading="lazy"
-                  />
-                  <p className="text-center text-xs font-medium text-slate-500">{agency.name}</p>
-                </div>
-              ))}
-            </div>
-          </article>
-        </div>
 
       </div>
     </section>

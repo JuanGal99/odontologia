@@ -1,4 +1,5 @@
 const about = {
+  sectionLabel: "Nuestra Clínica",
   title: "Sobre Nuestra Clínica",
   description:
     "Nacimos con la visión de ofrecer una atención odontológica de excelencia, enfocada en la calidad, la confianza y el bienestar del paciente. Nos dedicamos a brindar una experiencia cómoda y segura, respaldada por un servicio profesional desde el primer contacto. ",

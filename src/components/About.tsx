@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next";
 
 /**
  * Componente About (Acerca de):
- * Muestra información general sobre la doctora/clínica,
- * incluyendo una foto descriptiva y los puntos clave de su enfoque o filosofía.
+ * Presenta la doctora/clínica con foto y puntos clave.
+ * Paleta: fondo marfil #FAFAF8, acentos dorados #C9A84C.
  */
 const About = () => {
   const { t } = useTranslation("about");
@@ -11,60 +11,74 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-gradient-to-b from-white to-sky-50 text-sky-900 px-6 py-24 scroll-mt-20"
+      className="bg-[#FAFAF8] text-[#1A1A2E] px-6 py-24 scroll-mt-20"
       aria-labelledby="about-heading"
       role="region"
     >
       <div className="max-w-6xl mx-auto text-center lg:text-left">
         <div className="lg:flex lg:items-center lg:gap-16">
-          {/* Contenido Textual */}
+
+          {/* Contenido textual */}
           <div className="lg:w-1/2 mb-12 lg:mb-0">
+
+            {/* Etiqueta de sección — traducida por i18n */}
+            <span className="inline-block mb-4 text-xs font-semibold tracking-[0.2em] uppercase text-[#C9A84C]">
+              — {t("sectionLabel")}
+            </span>
+
             <h2
               id="about-heading"
-              className="text-4xl md:text-5xl font-extrabold mb-8 text-sky-950 tracking-tight"
+              className="text-4xl md:text-5xl font-extrabold mb-3 text-[#0B1527] tracking-tight leading-tight"
+              style={{ fontFamily: "'Playfair Display', serif" }}
             >
               {t("title")}
             </h2>
 
-            <p className="text-xl leading-relaxed text-slate-700 mb-8 font-light">
+            {/* Línea decorativa dorada */}
+            <div className="mb-8 w-14 h-[3px] bg-gradient-to-r from-[#C9A84C] to-[#E0BC6A] rounded-full mx-auto lg:mx-0" />
+
+            <p className="text-lg leading-relaxed text-slate-600 mb-8 font-light">
               {t("description")}
             </p>
 
+            {/* Puntos destacados con ícono dorado */}
             <ul className="space-y-4 text-left">
               {[t("point1"), t("point2"), t("point3")].map((point, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <svg
-                    className="w-6 h-6 text-sky-500 mt-1 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M5 13l4 4L19 7"
-                    ></path>
-                  </svg>
-                  <span className="text-lg text-slate-700 font-medium">{point}</span>
+                  <span className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-[#C9A84C]/15 flex items-center justify-center">
+                    <svg
+                      aria-hidden="true"
+                      className="w-3.5 h-3.5 text-[#C9A84C]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span className="text-base text-slate-700 font-medium">{point}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Foto del equipo o doctor principal */}
+          {/* Foto con decoración dorada */}
           <div className="lg:w-1/2 max-w-lg mx-auto relative">
-            <div className="absolute inset-0 bg-sky-200 rounded-2xl transform translate-x-4 translate-y-4 -z-10"></div>
+            {/* Sombra decorativa detrás */}
+            <div className="absolute inset-0 bg-[#C9A84C]/20 rounded-2xl transform translate-x-4 translate-y-4 -z-10" />
+            {/* Borde dorado decorativo en esquina */}
+            <div className="absolute -top-3 -left-3 w-16 h-16 border-t-2 border-l-2 border-[#C9A84C] rounded-tl-xl -z-0 pointer-events-none" />
+            <div className="absolute -bottom-3 -right-3 w-16 h-16 border-b-2 border-r-2 border-[#C9A84C] rounded-br-xl -z-0 pointer-events-none" />
             <img
               src="/images/team.jpeg"
               alt={t("imageAlt")}
-              className="rounded-2xl shadow-2xl object-cover w-full border-4 border-white"
+              className="relative rounded-2xl shadow-2xl object-cover w-full border-2 border-[#C9A84C]/20"
               loading="lazy"
               width={500}
               height={400}
             />
           </div>
+
         </div>
       </div>
     </section>

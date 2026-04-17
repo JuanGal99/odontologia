@@ -1,4 +1,5 @@
 const contact = {
+  sectionLabel: "Hablemos",
   title: "Contacto",
   validation: {
     countryRequired: "Por favor, selecciona un país.",

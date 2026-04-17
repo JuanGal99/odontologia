@@ -7,6 +7,7 @@ import i18n from "../i18n";
  * Representa la barra de navegación superior.
  * Incluye el logo, los enlaces de anclaje a las secciones,
  * el selector de idioma y el menú responsivo para móviles.
+ * Paleta: fondo navy #0B1527, acentos dorados #C9A84C.
  */
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,18 +28,20 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed top-0 left-0 w-full bg-black/95 backdrop-blur-md border-b border-white/10 z-50"
+      className="fixed top-0 left-0 w-full bg-[#0B1527]/97 backdrop-blur-md border-b border-[#C9A84C]/15 z-50"
       role="navigation"
       aria-label="Main navigation"
     >
+      {/* Acceso rápido para lectores de pantalla */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only absolute top-2 left-2 bg-white text-black px-4 py-2 rounded-md z-50"
+        className="sr-only focus:not-sr-only absolute top-2 left-2 bg-[#C9A84C] text-[#0B1527] px-4 py-2 rounded-md z-50 font-semibold"
       >
         Skip to main content
       </a>
 
       <div className="max-w-7xl mx-auto h-[82px] px-6 lg:px-8 flex items-center justify-between">
+
         {/* LOGO */}
         <a
           href="#hero"
@@ -59,7 +62,7 @@ const Navbar = () => {
               <li key={item.key}>
                 <a
                   href={`#${item.key}`}
-                  className="text-white/90 text-[15px] xl:text-base font-medium relative pb-1 border-b-2 border-transparent hover:text-white hover:border-[#d4af37] focus:outline-none focus:text-white focus:border-[#d4af37] transition-all duration-300"
+                  className="text-white/80 text-[15px] xl:text-base font-medium relative pb-1 border-b-2 border-transparent hover:text-white hover:border-[#C9A84C] focus:outline-none focus:text-white focus:border-[#C9A84C] transition-all duration-300 tracking-wide"
                 >
                   {item.label}
                 </a>
@@ -68,19 +71,20 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* DERECHA DESKTOP */}
+        {/* DERECHA DESKTOP — banderas + botón CTA */}
         <div className="hidden lg:flex items-center gap-4 xl:gap-5 shrink-0">
+          {/* Selector de idioma */}
           <div className="flex items-center gap-2">
             <button
               onClick={() => changeLanguage("en")}
               type="button"
               aria-label="Change language to English"
-              className="rounded-full focus:outline-none focus:ring-2 focus:ring-[#d4af37]/70"
+              className="rounded-full focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/70 transition-transform hover:scale-110"
             >
               <img
                 src="/flags/us.svg"
                 alt="English"
-                className={`w-7 h-7 rounded-full transition ${currentLang === "en" ? "ring-2 ring-[#d4af37]" : ""
+                className={`w-7 h-7 rounded-full transition ${currentLang === "en" ? "ring-2 ring-[#C9A84C] shadow-[0_0_8px_rgba(201,168,76,0.5)]" : "opacity-60 hover:opacity-100"
                   }`}
               />
             </button>
@@ -89,37 +93,38 @@ const Navbar = () => {
               onClick={() => changeLanguage("es")}
               type="button"
               aria-label="Cambiar idioma a español"
-              className="rounded-full focus:outline-none focus:ring-2 focus:ring-[#d4af37]/70"
+              className="rounded-full focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/70 transition-transform hover:scale-110"
             >
               <img
                 src="/flags/co.svg"
                 alt="Español"
-                className={`w-7 h-7 rounded-full transition ${currentLang === "es" ? "ring-2 ring-[#d4af37]" : ""
+                className={`w-7 h-7 rounded-full transition ${currentLang === "es" ? "ring-2 ring-[#C9A84C] shadow-[0_0_8px_rgba(201,168,76,0.5)]" : "opacity-60 hover:opacity-100"
                   }`}
               />
             </button>
           </div>
 
+          {/* Botón CTA — borde dorado, hover relleno dorado */}
           <a
             href="#contact"
-            className="inline-flex items-center justify-center bg-[#1f2f46] text-white px-5 xl:px-6 py-2.5 text-sm font-semibold rounded-xl hover:bg-[#2b3f5d] focus:outline-none focus:ring-2 focus:ring-[#d4af37]/60 transition-all duration-300 shadow-sm whitespace-nowrap"
+            className="inline-flex items-center justify-center border border-[#C9A84C] text-[#C9A84C] px-5 xl:px-6 py-2.5 text-sm font-semibold rounded-xl hover:bg-[#C9A84C] hover:text-[#0B1527] focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/60 transition-all duration-300 whitespace-nowrap tracking-wide"
           >
             {t("cta")}
           </a>
         </div>
 
-        {/* MOBILE */}
+        {/* MOBILE — banderas + hamburger */}
         <div className="flex items-center gap-3 lg:hidden">
           <button
             onClick={() => changeLanguage("en")}
             type="button"
             aria-label="Change language to English"
-            className="rounded-full focus:outline-none focus:ring-2 focus:ring-[#d4af37]/70"
+            className="rounded-full focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/70"
           >
             <img
               src="/flags/us.svg"
               alt="English"
-              className={`w-6 h-6 rounded-full ${currentLang === "en" ? "ring-2 ring-[#d4af37]" : ""
+              className={`w-6 h-6 rounded-full ${currentLang === "en" ? "ring-2 ring-[#C9A84C]" : "opacity-60"
                 }`}
             />
           </button>
@@ -128,63 +133,48 @@ const Navbar = () => {
             onClick={() => changeLanguage("es")}
             type="button"
             aria-label="Cambiar idioma a español"
-            className="rounded-full focus:outline-none focus:ring-2 focus:ring-[#d4af37]/70"
+            className="rounded-full focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/70"
           >
             <img
               src="/flags/co.svg"
               alt="Español"
-              className={`w-6 h-6 rounded-full ${currentLang === "es" ? "ring-2 ring-[#d4af37]" : ""
+              className={`w-6 h-6 rounded-full ${currentLang === "es" ? "ring-2 ring-[#C9A84C]" : "opacity-60"
                 }`}
             />
           </button>
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="p-2 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#d4af37]/70"
+            className="p-2 text-white/80 hover:text-[#C9A84C] rounded-md focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/70 transition-colors"
             type="button"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg aria-hidden="true" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {menuOpen ? (
-                <path
-                  d="M6 18L18 6M6 6l12 12"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+                <path d="M6 18L18 6M6 6l12 12" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
               ) : (
-                <path
-                  d="M4 6h16M4 12h16M4 18h16"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+                <path d="M4 6h16M4 12h16M4 18h16" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
               )}
             </svg>
           </button>
         </div>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MENÚ MOBILE desplegable */}
       {menuOpen && (
         <div
           id="mobile-menu"
-          className="lg:hidden px-4 pb-4 pt-2 bg-black border-t border-white/10"
+          className="lg:hidden px-4 pb-5 pt-2 bg-[#0B1527] border-t border-[#C9A84C]/15"
         >
-          <ul className="grid grid-cols-2 gap-3">
+          <ul className="grid grid-cols-2 gap-3 mb-4">
             {menuItems.map((item) => (
               <li key={item.key}>
                 <a
                   href={`#${item.key}`}
                   onClick={() => setMenuOpen(false)}
-                  className="block px-3 py-2 text-white/90 rounded-lg hover:bg-white/5 transition"
+                  className="block px-3 py-2.5 text-white/80 rounded-lg hover:bg-[#C9A84C]/10 hover:text-[#C9A84C] transition-all duration-200"
                 >
                   {item.label}
                 </a>
@@ -195,7 +185,7 @@ const Navbar = () => {
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="block w-full mt-4 bg-[#1f2f46] text-white px-4 py-3 rounded-xl text-center font-semibold hover:bg-[#2b3f5d] transition"
+            className="block w-full border border-[#C9A84C] text-[#C9A84C] px-4 py-3 rounded-xl text-center font-semibold hover:bg-[#C9A84C] hover:text-[#0B1527] transition-all duration-300"
           >
             {t("cta")}
           </a>

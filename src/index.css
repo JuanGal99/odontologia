@@ -1,1 +1,37 @@
 @import "tailwindcss";
+
+/* =========================================================
+   Variables globales del sistema de diseño premium
+   Paleta: Navy #0B1527  ·  Oro #C9A84C  ·  Marfil #FAFAF8
+   ========================================================= */
+:root {
+  --color-navy:        #0B1527;
+  --color-navy-dark:   #060F1E;
+  --color-navy-card:   #111D35;
+  --color-gold:        #C9A84C;
+  --color-gold-light:  #E0BC6A;
+  --color-ivory:       #FAFAF8;
+  --color-warm-gray:   #F3F2EF;
+  --color-text-dark:   #1A1A2E;
+  --color-text-muted:  #6B7280;
+}
+
+/* Fuente base global */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-ivory);
+  color: var(--color-text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scroll para anclas */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selección de texto con color de marca */
+::selection {
+  background-color: #C9A84C33;
+  color: #0B1527;
+}

@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="es" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/tooth.svg" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Preload de la imagen hero (LCP principal) — carga anticipada antes del render -->
+  <link rel="preload" as="image" href="/images/img_principal.jpeg" fetchpriority="high" />
+
+  <!-- Preconnect a Google Fonts — debe ir ANTES del stylesheet para resolver DNS anticipado -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />s
+
+  <!-- Fuentes premium: Playfair Display (headings) + Poppins (cuerpo) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
   <meta name="description"
     content="Your dental clinic in Colombia offering expert services in dental tourism, implants, and more. Book your appointment today!" />
-  <title>Dentist</title>
+  <title>Dra. Paula Galvis — Odontología Premium</title>
 </head>
 
 <body>
